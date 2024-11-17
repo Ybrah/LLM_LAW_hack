@@ -1,5 +1,5 @@
 import streamlit  as st
-import pdf
+import pdf_model
 import langchain_ai
 import esg_scoring
 import pandas as pd
@@ -80,7 +80,7 @@ pdf_path = st.file_uploader("Upload your  contract", type=["pdf"])
 
 if st.button("Run Analysis"):
     if pdf_path is not None:
-            contract_content_txt = pdf.extract_text_from_pdf(pdf_path)
+            contract_content_txt = pdf_model.extract_text_from_pdf(pdf_path)
             contract_keyinfo = langchain_ai.get_contract_keyinfo_df(contract_content_txt)
             db_contract = pd.concat([db_contract, contract_keyinfo], ignore_index=True)
             st.write(db_contract)
