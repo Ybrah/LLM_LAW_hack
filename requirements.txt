@@ -5,3 +5,4 @@ pdfminer
 pandas
 pyvis
 networkx
+streamlit
