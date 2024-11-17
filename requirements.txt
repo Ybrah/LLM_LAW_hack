@@ -2,7 +2,6 @@ langchain
 langchain-community
 langchain_openai
 pdfminer
-json
 pandas
 pyvis
 networkx
